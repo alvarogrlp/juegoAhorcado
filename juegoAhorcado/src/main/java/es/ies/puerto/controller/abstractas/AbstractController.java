@@ -15,6 +15,10 @@ public abstract class AbstractController {
 
     private Properties propertiesIdioma;
 
+    /**
+     * Constructor de la clase AbstractController.
+     * Inicializa el modelo de usuario con la ruta de la base de datos.
+     */
     public AbstractController() {
         try {
             usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
@@ -31,6 +35,12 @@ public abstract class AbstractController {
         return propertiesIdioma;
     }
 
+    /**
+     * Carga el archivo de propiedades del idioma especificado.
+     * @param nombreFichero Nombre del fichero de propiedades.
+     * @param idioma Idioma a cargar.
+     * @return Un objeto Properties con las propiedades cargadas.
+     */
     public Properties loadIdioma(String nombreFichero, String idioma) {
         Properties properties = new Properties();
 
@@ -58,6 +68,10 @@ public abstract class AbstractController {
         return properties;
     }
 
+    /**
+     * Devuelve el modelo de usuario.
+     * @return El modelo de usuario.
+     */
     public UsuarioServiceModel getUsuarioServiceModel() {
         return this.usuarioServiceModel;
     }

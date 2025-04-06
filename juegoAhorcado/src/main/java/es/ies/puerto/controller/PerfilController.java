@@ -12,16 +12,22 @@ import javafx.stage.Stage;
 
 public class PerfilController {
     @FXML
-    private Button onVolverButton;
-    @FXML
-    private Button onEditarButton;
+    private TextField textFieldUsuario;
     @FXML
     private TextField textFieldEmail;
     @FXML
-    private TextField textFieldUsuario;
-    @FXML
     private TextField textFieldPassword;
+    @FXML
+    private Button onEditarButton;
+    @FXML
+    private Button onJugarButton;
+    @FXML
+    private Button onVolverButton;
 
+    /**
+     * * Metodo que inicializa el controlador
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     public void initialize() {
         UsuarioEntity usuario = UsuarioSesion.getInstancia().getUsuario();
@@ -32,6 +38,10 @@ public class PerfilController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de editar
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openVolverClick() {
 
@@ -47,12 +57,35 @@ public class PerfilController {
         }
     }
     
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de editar
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openEditarClick() {
 
         try {
             Stage stage = (Stage) onVolverButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("editar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 450, 760);
+            stage.setTitle("Pantalla Inicio");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de jugar
+     * * @throws SQLException Excepcion de SQL
+     */
+    @FXML
+    protected void openJugarClick() {
+
+        try {
+            Stage stage = (Stage) onJugarButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("jugar.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 450, 760);
             stage.setTitle("Pantalla Inicio");
             stage.setScene(scene);

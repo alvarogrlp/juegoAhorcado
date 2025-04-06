@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.ConfirmacionEliminarController">
+    <Label text="¿Estás seguro que quieres eliminar tu cuenta?">
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Label>
+    <Label text="(Este proceso no se puede revertir)" />
+    <HBox alignment="CENTER" prefHeight="73.0" prefWidth="424.0" spacing="10">
+        <Button fx:id="onAceptarButton" onAction="#onAceptarClick" text="Aceptar" />
+        <Button fx:id="onCancelarButton" onAction="#onCancelarClick" text="Cancelar" />
+    </HBox>
+</VBox>

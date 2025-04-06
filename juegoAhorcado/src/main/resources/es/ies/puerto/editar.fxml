@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -19,5 +20,10 @@
       <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
       <Button fx:id="onGuardarButton" mnemonicParsing="false" onAction="#onClickGuardar" text="Guardar" />
       <Button fx:id="onVolverButton" mnemonicParsing="false" onAction="#openVolverClick" text="Volver" />
+      <Button fx:id="onEliminarButton" mnemonicParsing="false" onAction="#openEliminarClick" text="Eliminar Cuenta">
+         <VBox.margin>
+            <Insets top="70.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>

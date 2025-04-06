@@ -8,15 +8,8 @@ import java.util.Properties;
 public class ConfigManager {
 
     public static class ConfigProperties {
-
         static String path;
-
         private static final Properties properties = new Properties();
-
-        static {
-            
-           
-        }
 
         /**
          * Metodo estatico para obtener una propiedad
@@ -25,6 +18,10 @@ public class ConfigManager {
             return properties.getProperty(key);
         }
 
+        /**
+         * Metodo estatico para obtener una propiedad
+         * @param rutaPath Ruta del archivo de propiedades
+         */
         public static void setPath(String rutaPath) {
             System.out.println("Dentro del setPath");
             File file = new File(rutaPath);

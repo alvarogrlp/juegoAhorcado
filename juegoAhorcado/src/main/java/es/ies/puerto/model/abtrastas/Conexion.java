@@ -10,8 +10,10 @@ public abstract class Conexion {
     private String rutaArchivoBD;
     private Connection connection;
 
+    /**
+     * Constructor vacio
+     */
     public Conexion(){}
-
 
     /**
      * Constructor con path de conexion
@@ -31,11 +33,15 @@ public abstract class Conexion {
         rutaArchivoBD = unaRutaArchivoBD;
     }
 
-
     public String getRutaArchivoBD() {
         return this.rutaArchivoBD;
     }
 
+    /**
+     * Funcion que devuelve la conexion a la bbdd
+     * @param unaRutaArchivoBD ruta de la bbdd
+     * @return conexion a la bbdd
+     */
     public Connection getConnection() {
         try {
             if (connection == null) {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="es.ies.puerto.controller.EstadisticasController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    
+    <Label text="Estadísticas del Jugador" style="-fx-font-weight: bold">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    
+    <Label fx:id="nivelActualLabel" text="Nivel actual: " />
+    <Label fx:id="victoriasLabel" text="Victorias totales: " />
+    <Label fx:id="derrotasLabel" text="Derrotas totales: " />
+    <Label fx:id="rachaLabel" text="Mayor racha: " />
+    <Label fx:id="victoriasNivelLabel" text="Victorias para siguiente nivel: " />
+    
+    <Button fx:id="cerrarButton" text="Cerrar" onAction="#onCerrarClick" />
+</VBox>

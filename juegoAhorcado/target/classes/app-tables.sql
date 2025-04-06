@@ -1,5 +1,5 @@
 -- Eliminar la tabla palabra si existe
-DROP TABLE IF EXISTS nivele;
+DROP TABLE IF EXISTS nivel;
 DROP TABLE IF EXISTS palabra;
 DROP TABLE IF EXISTS usuario;
 
@@ -58,16 +58,19 @@ CREATE TABLE usuario (
     email TEXT NOT NULL UNIQUE,
     contrasenia TEXT NOT NULL,
     nivel_actual INTEGER DEFAULT 1,
-    nivel_alcanzado INTEGER DEFAULT 1,
-    puntuacion_total INTEGER DEFAULT 0,
-    progreso REAL DEFAULT 0.0
+    victorias_totales INTEGER DEFAULT 0,
+    derrotas_totales INTEGER DEFAULT 0,
+    victorias_nivel INTEGER DEFAULT 0,
+    mayor_racha INTEGER DEFAULT 0,
+    racha_actual INTEGER DEFAULT 0,
+    derrotas_consecutivas INTEGER DEFAULT 0
 );
 
 -- Insertar usuarios de ejemplo
-INSERT INTO usuario (nombre_usuario, email, contrasenia, nivel_actual, nivel_alcanzado, puntuacion_total, progreso) VALUES
-    ('alvaro', 'alvaro@gmail.com', '123', 1, 2, 0, 0.0),
-    ('anita', 'ana@gmail.com', '098', 2, 3, 0, 0.0),
-    ('admin', 'admin@admin.com', 'admin', 3, 3, 999, 9.9);
+INSERT INTO usuario (nombre_usuario, email, contrasenia, nivel_actual) VALUES
+    ('alvaro', 'alvaro@gmail.com', '123', 1),
+    ('anita', 'ana@gmail.com', '098', 2),
+    ('admin', 'admin@admin.com', 'admin', 3);
 
 
 -- Crear tabla de niveles

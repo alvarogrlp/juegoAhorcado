@@ -13,14 +13,18 @@ import javafx.stage.Stage;
 
 public class RecuperarController extends AbstractController {
     @FXML
-    private Button onVolverButton;
+    private TextField textFieldEmail;
     @FXML
     private Text textAviso;
     @FXML
-    private TextField textFieldEmail;
-    @FXML
     private Button onRecuperarButton;
+    @FXML
+    private Button onVolverButton;
 
+    /**
+     * * Metodo que inicializa el controlador
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void onClickRecuperar() {
 
@@ -39,6 +43,10 @@ public class RecuperarController extends AbstractController {
         textAviso.setText("Recuperación enviada");
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de volver
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openVolverClick() {
         try {

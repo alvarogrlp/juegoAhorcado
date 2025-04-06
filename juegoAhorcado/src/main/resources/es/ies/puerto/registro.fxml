@@ -9,7 +9,7 @@
 <VBox alignment="CENTER" prefHeight="760.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
    <children>
       <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" wrappingWidth="49.40380859375" />
-      <TextField fx:id="textFiledUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="234.0" promptText="Introducir nombre" />
+      <TextField fx:id="textFieldUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="234.0" promptText="Introducir nombre" />
       <Text fx:id="textUsuario1" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="49.40380859375" />
       <TextField fx:id="textFieldEmail" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="315.0" promptText="Introducir email" />
       <Text fx:id="textContrasenia" layoutX="213.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />

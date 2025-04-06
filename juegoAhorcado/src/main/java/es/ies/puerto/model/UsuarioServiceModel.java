@@ -9,13 +9,26 @@ import es.ies.puerto.model.abtrastas.Conexion;
 
 public class UsuarioServiceModel extends Conexion {
 
+    /**
+     * * Constructor vacio
+     */
     public UsuarioServiceModel() {
     }
     
+    /**
+     * * Constructor con path de conexion
+     * @param unaRutaArchivoBD ruta de la bbdd
+     * @throws SQLException error controlado
+     */
     public UsuarioServiceModel(String unaRutaArchivoBD) throws SQLException {
         super(unaRutaArchivoBD);
     }
     
+    /**
+     * * Funcion que devuelve la conexion a la bbdd
+     * @return ArrayList<UsuarioEntity> lista de usuarios
+     * @throws SQLException error controlado
+     */
     public ArrayList<UsuarioEntity> obtenerUsuarios() throws SQLException {
         String sql = "SELECT * FROM Usuario";
         return obtenerUsuario(sql);
@@ -42,25 +55,54 @@ public class UsuarioServiceModel extends Conexion {
         return usuarios;
     }
 
+    /**
+     * * Metodo que obtiene las credenciales del usuario
+     * @param dato 
+     * @return UsuarioEntity usuario con las credenciales
+     */
     public UsuarioEntity obtenerCredencialesUsuario(String dato) {
         try {
-            String sql = "SELECT * FROM Usuario " + "where email='" + dato + "'";
-            ArrayList<UsuarioEntity> usuarios = obtenerUsuario(sql);
-            if (usuarios.isEmpty()) {
-                sql = "SELECT * FROM Usuario " + "where nombre_usuario='" + dato + "'";
-                usuarios = obtenerUsuario(sql);
+            String sql = "SELECT * FROM usuario WHERE email = ? OR nombre_usuario = ?";
+            PreparedStatement stmt = getConnection().prepareStatement(sql);
+            stmt.setString(1, dato);
+            stmt.setString(2, dato);
+            
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                UsuarioEntity usuario = new UsuarioEntity(
+                    rs.getString("email"),
+                    rs.getString("nombre_usuario"),
+                    rs.getString("contrasenia")
+                );
+                // Cargar estadísticas
+                usuario.setNivelActual(rs.getInt("nivel_actual"));
+                usuario.setVictoriasTotales(rs.getInt("victorias_totales"));
+                usuario.setDerrotasTotales(rs.getInt("derrotas_totales"));
+                usuario.setVictoriasNivel(rs.getInt("victorias_nivel"));
+                usuario.setMayorRacha(rs.getInt("mayor_racha"));
+                usuario.setRachaActual(rs.getInt("racha_actual"));
+                usuario.setDerrotasConsecutivas(rs.getInt("derrotas_consecutivas"));
+                
+                return usuario;
             }
-            if (usuarios.isEmpty()) {
-                return null;
-            }
-            return usuarios.get(0);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+        } finally {
+            try {
+                cerrar();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
+        return null;
     }
 
+    /**
+     * * Metodo que obtiene las credenciales del usuario
+     * @param usuario 
+     * @return boolean true si se ha podido agregar el usuario
+     * @throws SQLException error controlado
+     */
     public boolean agregarUsuario(UsuarioEntity usuario) throws SQLException {
         if (usuario == null) {
             return false;
@@ -85,6 +127,12 @@ public class UsuarioServiceModel extends Conexion {
         return true;
     }
 
+    /**
+     * * Metodo que edita el usuario
+     * @param usuario
+     * @return boolean true si se ha podido editar el usuario
+     * @throws SQLException error controlado
+     */
     public boolean editarUsuario(UsuarioEntity usuario) throws SQLException {
         if (usuario == null) {
             return false;
@@ -106,6 +154,13 @@ public class UsuarioServiceModel extends Conexion {
         }
     }
     
+    /**
+     * * Metodo que edita el usuario
+     * @param usuario 
+     * @param emailOriginal 
+     * @return boolean true si se ha podido editar el usuario
+     * @throws SQLException error controlado
+     */
     public boolean editarUsuario(UsuarioEntity usuario, String emailOriginal) throws SQLException {
         if (usuario == null || emailOriginal == null || emailOriginal.isEmpty()) {
             return false;
@@ -126,6 +181,99 @@ public class UsuarioServiceModel extends Conexion {
             return false;
         } finally {
             cerrar();
+        }
+    }
+
+    /**
+     * * Metodo que elimina el usuario
+     * @param email
+     * @return boolean true si se ha podido eliminar el usuario
+     * @throws SQLException error controlado
+     */
+    public boolean eliminarUsuario(String email) throws SQLException {
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
+
+        String sql = "DELETE FROM usuario WHERE email = '" + email + "'";
+
+        try {
+            PreparedStatement sentencia = getConnection().prepareStatement(sql);
+            int filasEliminadas = sentencia.executeUpdate();
+            return filasEliminadas > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            cerrar();
+        }
+    }
+
+    /**
+     * * Metodo que obtiene una palabra aleatoria de la base de datos
+     * @param nivel 
+     * @return String palabra aleatoria
+     */
+    public String obtenerPalabraAleatoria(int nivel) {
+        try {
+            String sql = "SELECT palabra FROM palabra WHERE id_nivel = ? ORDER BY RANDOM() LIMIT 1";
+            PreparedStatement stmt = getConnection().prepareStatement(sql);
+            stmt.setInt(1, nivel);
+            
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString("palabra");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                cerrar();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return "casa"; 
+    }
+
+    /**
+     * * Metodo que actualiza las estadisticas del usuario
+     * @param usuario
+     * @return boolean true si se ha podido actualizar el usuario
+     * @throws SQLException error controlado
+     */
+    public boolean actualizarEstadisticas(UsuarioEntity usuario) throws SQLException {
+        String sql = "UPDATE usuario SET " +
+                     "nivel_actual = ?, " +
+                     "victorias_totales = ?, " +
+                     "derrotas_totales = ?, " +
+                     "victorias_nivel = ?, " +
+                     "mayor_racha = ?, " +
+                     "racha_actual = ?, " +
+                     "derrotas_consecutivas = ? " +
+                     "WHERE email = ?";
+        
+        try {
+            PreparedStatement stmt = getConnection().prepareStatement(sql);
+            stmt.setInt(1, usuario.getNivelActual());
+            stmt.setInt(2, usuario.getVictoriasTotales());
+            stmt.setInt(3, usuario.getDerrotasTotales());
+            stmt.setInt(4, usuario.getVictoriasNivel());
+            stmt.setInt(5, usuario.getMayorRacha());
+            stmt.setInt(6, usuario.getRachaActual());
+            stmt.setInt(7, usuario.getDerrotasConsecutivas());
+            stmt.setString(8, usuario.getEmail());
+            
+            return stmt.executeUpdate() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                cerrar(); 
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

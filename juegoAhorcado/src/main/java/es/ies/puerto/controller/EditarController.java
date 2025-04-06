@@ -1,6 +1,7 @@
 package es.ies.puerto.controller;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
@@ -34,7 +35,12 @@ public class EditarController extends AbstractController {
     private Button buttonGuardar;
     @FXML
     private Button onVolverButton;
+    @FXML
+    private Button onEliminarButton;
 
+    /**
+     * * Metodo que inicializa el controlador
+     */
     @FXML
     public void initialize() {
         UsuarioEntity usuario = UsuarioSesion.getInstancia().getUsuario();
@@ -45,6 +51,10 @@ public class EditarController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de guardar
+     * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void onClickGuardar() throws SQLException {
         
@@ -72,6 +82,10 @@ public class EditarController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de volver
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openVolverClick() {
         try {
@@ -81,6 +95,25 @@ public class EditarController extends AbstractController {
             stage.setTitle("Pantalla Inicio");
             stage.setScene(scene);
             stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de eliminar
+     * * @throws SQLException Excepcion de SQL
+     */
+    @FXML
+    protected void openEliminarClick() {
+        try {
+            FXMLLoader loader = new FXMLLoader(PrincipalApplication.class.getResource("ConfirmacionEliminar.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            stage.setTitle("Confirmación de eliminación");
+            stage.setResizable(false);
+
+            stage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
         }

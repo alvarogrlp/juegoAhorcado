@@ -19,26 +19,30 @@ import javafx.stage.Stage;
 
 public class LoginController extends AbstractController {
     @FXML
+    private ComboBox comboIdioma;
+    @FXML
+    private Text textUsuario;
+    @FXML
     private TextField textFieldUsuario;
     @FXML
+    private Text textContrasenia;
+    @FXML
     private PasswordField textFieldPassword;
+    @FXML
+    private Button onAceptarButton;
     @FXML
     private Text textFieldMensaje;
     @FXML
     private Button onRegistrarButton;
     @FXML
-    private Button onAceptarButton;
-    @FXML
-    private Text textUsuario;
-    @FXML
     private Button onRecuperarButton;
     @FXML
     private Button onMostrarButton;
-    @FXML
-    private Text textContrasenia;
-    @FXML
-    private ComboBox comboIdioma;
     
+    /**
+     * * Metodo que inicializa el controlador
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     public void initialize() {
         List<String> idiomas = new ArrayList<>();
@@ -48,6 +52,11 @@ public class LoginController extends AbstractController {
         comboIdioma.getItems().addAll(idiomas);
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de idioma
+     * * Cambia el idioma de la aplicacion
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void cambiarIdioma() {
         String path = "src/main/resources/idioma-" + comboIdioma.getValue().toString() + ".properties";
@@ -58,6 +67,11 @@ public class LoginController extends AbstractController {
         textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de login
+     * * Valida las credenciales del usuario
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void onLoginButtonClick() {
 
@@ -85,6 +99,10 @@ public class LoginController extends AbstractController {
         textFieldMensaje.setText("Credenciales invalidas");
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de volver
+     * * Vuelve a la pantalla de inicio
+     */
     @FXML
     protected void openRegistrarClick() {
 
@@ -92,11 +110,6 @@ public class LoginController extends AbstractController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 450, 760);
-
-            // RegistroController registroController = fxmlLoader.getController();
-            // registroController.setpropertiesIdioma(this.getPropertiesIdioma());
-
-            // registroController.postConstructor();
 
             Stage stage = (Stage) onRegistrarButton.getScene().getWindow();
             stage.setTitle("Pantalla Registro");
@@ -107,6 +120,10 @@ public class LoginController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de recuperar
+     * * Vuelve a la pantalla de recuperacion
+     */
     @FXML
     protected void openRecuperarClick() {
 
@@ -122,6 +139,10 @@ public class LoginController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de mostrar
+     * * Vuelve a la pantalla de mostrar usuarios
+     */
     @FXML
     protected void openMostrarClick() {
 
@@ -137,6 +158,10 @@ public class LoginController extends AbstractController {
         }
     }
     
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de aceptar
+     * * Valida las credenciales del usuario y abre la pantalla de perfil
+     */
     @FXML
     protected void openAceptarClick() {
         try {

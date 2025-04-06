@@ -15,12 +15,16 @@ import javafx.stage.Stage;
 
 public class MostrarUsuariosController extends AbstractController {
     @FXML
-    private Button onVolverButton;
+    private Text textUsuarios;
     @FXML
     private Button onMostrarrButton;
     @FXML
-    private Text textUsuarios;
+    private Button onVolverButton;
 
+    /**
+     * * Metodo que inicializa el controlador
+     * * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openVolverClick() {
         try {
@@ -35,6 +39,11 @@ public class MostrarUsuariosController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de mostrar
+     * * Muestra todos los usuarios en la base de datos
+     * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void openMostrarClick() throws SQLException {
 

@@ -18,24 +18,27 @@ import javafx.stage.Stage;
 
 public class RegistroController extends AbstractController {
     @FXML
-    private Button onVolverButton;
-    @FXML
-    private Button onRegistrarButton;
+    private Text textUsuario;
     @FXML
     private TextField textFieldUsuario;
     @FXML
     private TextField textFieldEmail;
     @FXML
-    private Text textMensaje;
+    private Text textContrasenia;
     @FXML
     private PasswordField textFieldPassword;
     @FXML
     private PasswordField textFieldPasswordRepit;
     @FXML
-    private Text textUsuario;
+    private Text textMensaje;
     @FXML
-    private Text textContrasenia;
-
+    private Button onRegistrarButton;
+    @FXML
+    private Button onVolverButton;
+    
+    /**
+     * * Metodo que inicializa el controlador
+     */
     @FXML
     public void initialize() {
         textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
@@ -43,12 +46,10 @@ public class RegistroController extends AbstractController {
     }
 
     /**
-     * public void postConstructor() {
-     * textUsuario.setText(getPropertiesIdioma().getProperty("textUsuario"));
-     * textContrasenia.setText(getPropertiesIdioma().getProperty("textContrasenia"));
-     * }
-     **/
-
+     * * Metodo que se ejecuta al hacer click en el boton de registrar
+     * * Registra un nuevo usuario en la base de datos
+     * @throws SQLException Excepcion de SQL
+     */
     @FXML
     protected void onClickRegistar() throws SQLException {
 
@@ -75,6 +76,10 @@ public class RegistroController extends AbstractController {
         }
     }
 
+    /**
+     * * Metodo que se ejecuta al hacer click en el boton de volver
+     * * Vuelve a la pantalla de inicio de sesion
+     */
     @FXML
     protected void openVolverClick() {
         try {
