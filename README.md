@@ -54,8 +54,8 @@ juegoAhorcado/
 
 ## 🌍 Idiomas Disponibles
 * 🇪🇸 Español
-* 🇬🇧 Inglés
-* 🇫🇷 Francés
+* 🇬🇧 Inglés (En desarrollo)
+* 🇫🇷 Francés (En desarrollo)
 
 ## 💾 Base de Datos
 Sistema SQLite que almacena:
