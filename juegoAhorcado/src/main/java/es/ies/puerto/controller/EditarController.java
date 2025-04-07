@@ -107,7 +107,7 @@ public class EditarController extends AbstractController {
     @FXML
     protected void openEliminarClick() {
         try {
-            FXMLLoader loader = new FXMLLoader(PrincipalApplication.class.getResource("ConfirmacionEliminar.fxml"));
+            FXMLLoader loader = new FXMLLoader(PrincipalApplication.class.getResource("confirmacionEliminar.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
             stage.setTitle("Confirmación de eliminación");
