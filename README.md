@@ -68,5 +68,3 @@ Sistema SQLite que almacena:
 
 ---
 ⭐ Si te gusta este proyecto, ¡no dudes en darle una estrella!
-
-Commit directly to the main branch.
