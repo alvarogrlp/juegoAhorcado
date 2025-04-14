@@ -34,7 +34,7 @@ Una implementación del clásico juego del ahorcado desarrollada en Java con Jav
 * ![Maven](https://img.shields.io/badge/Maven-3.8-red)
 
 ## 🎮 Interfaz del Juego
-![Pantalla del juego](juegoAhorcado/src/main/resources/images/pantalla-juego.png)
+![Pantalla del juego](juegoAhorcado/src/main/resources/images/pantalla-inicio.png)
 
 ## 📁 Estructura del Proyecto
 ```
