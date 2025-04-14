@@ -1,0 +1,175 @@
+/* Colores principales */
+* {
+    -primary-color: #4B89DC;       /* Azul principal */
+    -secondary-color: #FF9800;     /* Naranja secundario */
+    -accent-color: #8CC152;        /* Verde acento */
+    -background-color: #F9F9F9;    /* Fondo claro */
+    -text-color: #434A54;          /* Texto oscuro */
+    -light-text: #FFFFFF;          /* Texto claro */
+    -error-color: #FF5252;         /* Rojo para errores */
+    -success-color: #4CD964;       /* Verde para éxitos */
+}
+
+/* Estilos generales */
+.root {
+    -fx-background-color: -background-color;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Encabezados y textos */
+.label {
+    -fx-text-fill: -text-color;
+    -fx-font-size: 14px;
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -primary-color;
+    -fx-padding: 10px 0;
+}
+
+.subtitle {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -secondary-color;
+}
+
+.message {
+    -fx-font-size: 14px;
+    -fx-text-fill: -text-color;
+    -fx-padding: 5px 0;
+}
+
+.error-message {
+    -fx-text-fill: -error-color;
+    -fx-font-weight: bold;
+}
+
+.success-message {
+    -fx-text-fill: -success-color;
+    -fx-font-weight: bold;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: -light-text;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: derive(-primary-color, 10%);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-transition: all 0.2s ease;
+}
+
+.button:pressed {
+    -fx-background-color: derive(-primary-color, -10%);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.action-button {
+    -fx-background-color: -accent-color;
+}
+
+.cancel-button {
+    -fx-background-color: -error-color;
+}
+
+/* Campos de texto */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-radius: 20px;
+    -fx-padding: 8px 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1);
+}
+
+.text-field:focused {
+    -fx-border-color: -primary-color;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-color: #DDDDDD;
+    -fx-border-radius: 20px;
+}
+
+.combo-box:focused {
+    -fx-border-color: -primary-color;
+}
+
+/* Para el juego - Elementos específicos */
+.game-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+    -fx-padding: 20px;
+}
+
+.letter-display {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -primary-color;
+    -fx-letter-spacing: 5px;
+}
+
+.game-button {
+    -fx-background-color: -secondary-color;
+    -fx-text-fill: -light-text;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.game-button:hover {
+    -fx-font-size: 16px;
+    -fx-background-color: derive(-secondary-color, 10%);
+}
+
+.stats-container {
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 3, 0, 0, 1);
+}
+
+.canvas {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}
+
+/* Contenedores */
+.vbox, .hbox {
+    -fx-spacing: 15px;
+    -fx-alignment: center;
+}
+
+/* Animación para mensajes */
+.animated-text {
+    -fx-font-size: 16px;
+    -fx-fill: -accent-color;
+    -fx-font-weight: bold;
+}
+
+/* Estilos para niveles */
+.level-easy {
+    -fx-text-fill: #8CC152;
+}
+
+.level-medium {
+    -fx-text-fill: #F6BB42;
+}
+
+.level-hard {
+    -fx-text-fill: #FF5252;
+}

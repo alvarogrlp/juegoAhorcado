@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.ConfirmacionEliminarController">
+<VBox stylesheets="@styles.css" alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.ConfirmacionEliminarController">
     <Label text="¿Estás seguro que quieres eliminar tu cuenta?">
       <VBox.margin>
          <Insets top="10.0" />

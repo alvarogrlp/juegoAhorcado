@@ -86,7 +86,7 @@ public class PerfilController {
         try {
             Stage stage = (Stage) onJugarButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("jugar.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 760);
+            Scene scene = new Scene(fxmlLoader.load(), 650, 860);
             stage.setTitle("Pantalla Inicio");
             stage.setScene(scene);
             stage.show();

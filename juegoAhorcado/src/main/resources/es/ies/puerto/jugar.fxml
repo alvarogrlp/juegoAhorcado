@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" prefHeight="760.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.JugarController">
+<VBox alignment="TOP_CENTER" prefHeight="760.0" prefWidth="450.0" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.JugarController">
    <children>
       <HBox alignment="CENTER" prefHeight="28.0" prefWidth="450.0">
          <children>
@@ -69,12 +69,12 @@
       </Text>
       <HBox alignment="CENTER" prefHeight="45.0" prefWidth="450.0">
          <children>
-            <TextField fx:id="textFieldLetra" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="57.0" promptText="Letra">
+            <TextField fx:id="textFieldLetra" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="66.0" promptText="Letra">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button fx:id="onInsertarButton" mnemonicParsing="false" onAction="#onInsertarClick" prefHeight="27.0" prefWidth="57.0" text="Insertar">
+            <Button fx:id="onInsertarButton" mnemonicParsing="false" onAction="#onInsertarClick" prefHeight="35.0" prefWidth="96.0" text="Insertar">
                <HBox.margin>
                   <Insets left="40.0" />
                </HBox.margin>
@@ -93,8 +93,11 @@
          </font></Text>
       <Button fx:id="onReiniciarButton" mnemonicParsing="false" onAction="#onReiniciarClick" text="Reiniciar">
          <VBox.margin>
+            <Insets top="-20.0" />
+         </VBox.margin></Button>
+      <Button fx:id="onVolverButton" mnemonicParsing="false" onAction="#openVolverClick" text="Volver">
+         <VBox.margin>
             <Insets top="-10.0" />
          </VBox.margin></Button>
-      <Button fx:id="onVolverButton" mnemonicParsing="false" onAction="#openVolverClick" text="Volver" />
    </children>
 </VBox>

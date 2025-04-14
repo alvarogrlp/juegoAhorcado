@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="760.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.EditarController">
+<VBox alignment="CENTER" prefHeight="760.0" prefWidth="450.0" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.EditarController">
    <children>
       <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" wrappingWidth="49.40380859375" />
       <TextField fx:id="textFieldUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="234.0" promptText="Introducir nombre" />
@@ -18,9 +18,9 @@
       <Text fx:id="textMensaje2" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Password" />
       <PasswordField fx:id="textFieldPasswordRepit" maxHeight="-Infinity" maxWidth="-Infinity" promptText="repetir password" />
       <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-      <Button fx:id="onGuardarButton" mnemonicParsing="false" onAction="#onClickGuardar" text="Guardar" />
-      <Button fx:id="onVolverButton" mnemonicParsing="false" onAction="#openVolverClick" text="Volver" />
-      <Button fx:id="onEliminarButton" mnemonicParsing="false" onAction="#openEliminarClick" text="Eliminar Cuenta">
+      <Button fx:id="onGuardarButton" mnemonicParsing="false" onAction="#onClickGuardar" prefHeight="35.0" prefWidth="104.0" text="Guardar" />
+      <Button fx:id="onVolverButton" mnemonicParsing="false" onAction="#openVolverClick" prefHeight="35.0" prefWidth="90.0" text="Volver" />
+      <Button fx:id="onEliminarButton" mnemonicParsing="false" onAction="#openEliminarClick" prefHeight="35.0" prefWidth="153.0" text="Eliminar Cuenta">
          <VBox.margin>
             <Insets top="70.0" />
          </VBox.margin>
