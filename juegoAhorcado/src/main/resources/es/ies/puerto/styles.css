@@ -1,13 +1,13 @@
 /* Colores principales */
 * {
-    -primary-color: #4B89DC;       /* Azul principal */
-    -secondary-color: #FF9800;     /* Naranja secundario */
-    -accent-color: #8CC152;        /* Verde acento */
-    -background-color: #F9F9F9;    /* Fondo claro */
-    -text-color: #434A54;          /* Texto oscuro */
-    -light-text: #FFFFFF;          /* Texto claro */
-    -error-color: #FF5252;         /* Rojo para errores */
-    -success-color: #4CD964;       /* Verde para éxitos */
+    -primary-color: #4B89DC;       
+    -secondary-color: #FF9800;    
+    -accent-color: #8CC152;      
+    -background-color: #F9F9F9;    
+    -text-color: #434A54;        
+    -light-text: #FFFFFF;         
+    -error-color: #FF5252;         
+    -success-color: #4CD964;      
 }
 
 /* Estilos generales */

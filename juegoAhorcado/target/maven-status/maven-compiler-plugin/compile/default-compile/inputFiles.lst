@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\controller\abstractas\AbstractController.java
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\controller\LoginController.java
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\model\abtrastas\Conexion.java
@@ -16,3 +17,23 @@ C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\controller\RecuperarController.java
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\model\UsuarioEntity.java
 C:\Users\alvar\Desktop\Programacion\juegoAhorcado\juegoAhorcado\src\main\java\es\ies\puerto\model\UsuarioSesion.java
+=======
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/model/abtrastas/Conexion.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/RecuperarController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/model/UsuarioEntity.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/LoginController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/config/ConfigManager.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/servicio/UsuarioServicio.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/JugarController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/model/UsuarioSesion.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/abstractas/AbstractController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/ConfirmacionEliminarController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/RegistroController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/PerfilController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/model/UsuarioServiceModel.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/EditarController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/MostrarUsuariosController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/controller/EstadisticasController.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/module-info.java
+/home/dam/Escritorio/Pro/juegoAhorcado/juegoAhorcado/src/main/java/es/ies/puerto/PrincipalApplication.java
+>>>>>>> ee6722caa9571faa5e35a21acbd9149eff7345ca
